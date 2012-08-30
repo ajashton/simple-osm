@@ -88,14 +88,14 @@
     },
     {
       "extent": [
-        -3.5849971748533567,
-        55.78301394697766,
-        -2.8351121420964147,
+        -111.40430495707363,
+        34.867065951652414,
+        140.87830682879488,
         56.13192588545409
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "( SELECT way, way_area AS area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
+        "table": "( SELECT way, way_area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
         "extent": "",
         "key_field": "",
         "geometry_field": "",

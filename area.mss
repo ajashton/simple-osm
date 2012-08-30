@@ -4,7 +4,13 @@ Map {
 
 #ocean_ne[zoom <= 6],
 #ocean[zoom > 6],
-#water_poly[zoom > 6] {
+#water_poly[zoom = 6][way_area > 16000000],
+#water_poly[zoom = 7][way_area > 4000000],
+#water_poly[zoom = 8][way_area > 1000000],
+#water_poly[zoom = 9][way_area > 250000],
+#water_poly[zoom = 10][way_area > 12500],
+#water_poly[zoom = 11][way_area > 3125],
+#water_poly[zoom > 11][way_area > 0] {
   ::line {
     line-color: #afdde9;
     [zoom=15] { line-width: 1.5; }
