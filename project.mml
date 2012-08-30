@@ -1,0 +1,192 @@
+{
+  "bounds": [
+    -180,
+    -85.0511,
+    180,
+    85.0511
+  ],
+  "center": [
+    0,
+    0,
+    2
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 0,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "area.mss",
+    "hwy.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99998938710385,
+        -85.051,
+        179.99999,
+        85.051
+      ],
+      "id": "ocean_ne",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-ocean.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ocean_ne"
+    },
+    {
+      "id": "ocean",
+      "name": "ocean",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://gis-data.s3.amazonaws.com/osm-joto/water_polygons.zip",
+        "type": "shape"
+      },
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        85.051
+      ],
+      "class": "",
+      "srs-name": "900913",
+      "advanced": {}
+    },
+    {
+      "extent": [
+        -80.16099971721391,
+        38.53900502668559,
+        -2.8351121420964147,
+        56.13192588545409
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( select * from planet_osm_polygon\nwhere amenity is not null\nor historic is not null\nor leisure is not null\nor shop is not null\nor tourism is not null\norder by way_area desc\n) as data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres",
+        "id": "polygon",
+        "project": "osm2pgsql",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "area",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "area"
+    },
+    {
+      "extent": [
+        -3.5849971748533567,
+        55.78301394697766,
+        -2.8351121420964147,
+        56.13192588545409
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres"
+      },
+      "id": "water_poly",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "water_poly"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -80.1609993578878,
+        38.53899996761972,
+        -2.8350145850565593,
+        56.13199426945884
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( select * from planet_osm_line\n  where highway is not null\n) as data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres"
+      },
+      "id": "hwy",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "hwy"
+    },
+    {
+      "extent": [
+        -80.16099971721391,
+        38.53900502668559,
+        -2.8351121420964147,
+        56.13192588545409
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( select * from planet_osm_polygon\nwhere building is not null\nor man_made is not null\n) as data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres"
+      },
+      "id": "bldg",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "bldg"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -80.16097688884153,
+        38.539000395446116,
+        -2.835075199605359,
+        56.1319393947145
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( select * from planet_osm_point\n  where amenity is not null\n  or historic is not null\n  or leisure is not null\n  or shop is not null\n  or tourism is not null\n) as data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres"
+      },
+      "id": "poi",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "poi"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Simple OSM",
+  "description": "",
+  "attribution": "Map Data © OpenStreetMap (and) contributors, CC-BY-SA"
+}
