@@ -18,7 +18,8 @@
   "Stylesheet": [
     "style.mss",
     "area.mss",
-    "hwy.mss"
+    "hwy.mss",
+    "poi.mss"
   ],
   "Layer": [
     {

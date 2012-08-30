@@ -1,4 +1,4 @@
-#hwy {
+#hwy[zoom > 5] {
   line-color: #9393ac;
   line-width: 0;
   line-join: round;
@@ -37,6 +37,7 @@
   // Widths
   [highway = 'motorway'] {
     //line-color: #1c1c24;
+    [zoom = 6]  { line-width: 0.5; }
     [zoom = 7]  { line-width: 1.0; }
     [zoom = 8]  { line-width: 1.5; }
     [zoom = 9]  { line-width: 2.0; }
@@ -52,6 +53,7 @@
   }
   [highway = 'trunk'] {
     //line-color: #373748;
+    [zoom = 7]  { line-width: 0.5; }
     [zoom = 8]  { line-width: 1.0; }
     [zoom = 9]  { line-width: 1.5; }
     [zoom = 10] { line-width: 2.0; }
@@ -66,6 +68,7 @@
   }
   [highway = 'primary'] {
     //line-color: #53536c;
+    [zoom = 8]  { line-width: 0.5; }
     [zoom = 9]  { line-width: 1.0; }
     [zoom = 10] { line-width: 1.5; }
     [zoom = 11] { line-width: 2.0; }
@@ -81,6 +84,7 @@
   [highway = 'trunk_link'],
   [highway = 'secondary'] {
     //line-color: #6f6f91;
+    [zoom = 9]  { line-width: 0.5; }
     [zoom = 10] { line-width: 1.0; }
     [zoom = 11] { line-width: 1.5; }
     [zoom = 12] { line-width: 2.0; }

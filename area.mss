@@ -18,7 +18,7 @@ Map {
   polygon-pattern-alignment: global;
 }
 
-#area {
+#area[zoom > 6] {
   [amenity > '']  { polygon-fill: @amenity_fill; }
   [historic > ''] { polygon-fill: @historic_fill; }
   [leisure > '']  { polygon-fill: @leisure_fill; }
