@@ -5,3 +5,5 @@
 
 This is in the early experimenting/concepting stages. No labels yet. Not 
 optimized for low zoom levels or full-planet imports.
+
+License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
