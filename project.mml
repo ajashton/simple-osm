@@ -114,6 +114,31 @@
       "geometry": "linestring",
       "extent": [
         -80.1609993578878,
+        34.86700293382966,
+        141.1193076617022,
+        56.13199426945884
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( select * from planet_osm_line\n  where railway is not null\n) as data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "osm",
+        "host": "localhost",
+        "user": "postgres"
+      },
+      "id": "rail",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "rail"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -80.1609993578878,
         38.53899996761972,
         -2.8350145850565593,
         56.13199426945884

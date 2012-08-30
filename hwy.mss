@@ -1,3 +1,23 @@
+#rail[zoom > 7] {
+  ::line {
+    line-color: #c8beb7;
+    [zoom > 7]  { line-width: 0.4; }
+    [zoom > 9]  { line-width: 0.6; }
+    [zoom > 11] { line-width: 0.8; }
+    [zoom > 13] { line-width: 1.0; }
+    [zoom > 15] { line-width: 1.2; }
+    [zoom > 17] { line-width: 1.4; }
+  }
+  ::dash[zoom > 11] {
+    line-color: #c8beb7;
+    line-dasharray: 1,19;
+    [zoom > 11] { line-width: 2; }
+    [zoom > 13] { line-width: 2.5; }
+    [zoom > 15] { line-width: 3; }
+    [zoom > 17] { line-width: 4; }
+  }
+}
+
 #hwy[zoom > 5] {
   line-color: #9393ac;
   line-width: 0;
